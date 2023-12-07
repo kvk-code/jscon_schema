@@ -65,7 +65,25 @@
 
 * Nested objects and arrays can also be defined, as shown in the `address` and `courses` properties.
 
+## JSON Schema Minimal Requirements
 
+1. `$schema`: This is a URI (Uniform Resource Identifier) that indicates which version of the JSON Schema specification the schema is written in. It's like declaring the 'syntax rules' your schema follows. For example, `"$schema": "http://json-schema.org/draft-07/schema#"` indicates that the schema is using Draft 7 of the JSON Schema Specification.  
+
+2. `type`: This keyword defines the data type for the JSON data. The basic types in JSON Schema are:
+
+    * `string`
+    * `number`
+    * `integer`
+    * `boolean` 
+    * `array`
+    * `object`
+    * `null`
+
+3. `properties` (for objects): This is used to define the properties or fields of an object, what type each property is, and other details about each property. For example, if you're defining a schema for an object that represents a person, you might have properties like `name`, `age`, and `email`.
+
+4. `items` (for arrays): When you have an array type, `items` is used to specify the schema for the elements within the array.  
+
+5. `required`: This is an array of strings where each string is the name of a property in an object. It defines which properties must be present in the JSON data for it to be valid against the schema.
 
 
 
