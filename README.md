@@ -1,82 +1,76 @@
 # json_schema
 
-## A Samle JSON Object
+## A Sample JSON Schema and Object Confirming to the Schema
 
-<code> {
+```bash
+| JSON Schema                           | Student Object                          |
+|---------------------------------------|-----------------------------------------|
+| `{                                    | `{                                      |
+|   "$schema": "http://json-schema.org/ |   "id": 12345,                          |
+|   draft-07/schema#",                  |   "name": "Alex Johnson",               |
+|   "title": "Student",                 |   "email": "alex.johnson@example.edu",  |
+|   "type": "object",                   |   "age": 21,                            |
+|   "properties": {                     |   "isEnrolled": true,                   |
+|     "id": {                           |   "courses": ["Biology 101",            |
+|       "type": "integer",              |                "Mathematics 202",       |
+|       "description": "The unique      |                "Literature 303"],       |
+|       identifier for a student"       |   "address": {                          |
+|     },                                |     "street": "456 University Blvd",     |
+|     "name": {                         |     "city": "College Town",             |
+|       "type": "string",               |     "postalCode": "78901"               |
+|       "description": "Name of the     |   }                                     |
+|       student"                        | }                                       |
+|     },                                |                                         |
+|     "email": {                        |                                         |
+|       "type": "string",               |                                         |
+|       "format": "email",              |                                         |
+|       "description": "The student's   |                                         |
+|       email address"                  |                                         |
+|     },                                |                                         |
+|     "age": {                          |                                         |
+|       "type": "integer",              |                                         |
+|       "minimum": 0,                   |                                         |
+|       "description": "Age of the      |                                         |
+|       student"                        |                                         |
+|     },                                |                                         |
+|     "isEnrolled": {                   |                                         |
+|       "type": "boolean",              |                                         |
+|       "description": "True if the     |                                         |
+|       student is currently enrolled"  |                                         |
+|     },                                |                                         |
+|     "courses": {                      |                                         |
+|       "type": "array",                |                                         |
+|       "items": {                      |                                         |
+|         "type": "string"              |                                         |
+|       },                              |                                         |
+|       "description": "List of courses |                                         |
+|       the student is enrolled in"     |                                         |
+|     },                                |                                         |
+|     "address": {                      |                                         |
+|       "type": "object",               |                                         |
+|       "properties": {                 |                                         |
+|         "street": { "type": "string" },|                                         |
+|         "city": { "type": "string" },  |                                         |
+|         "postalCode": { "type":       |                                         |
+|         "string" }                    |                                         |
+|       },                              |                                         |
+|       "required": ["street", "city",  |                                         |
+|       "postalCode"],                  |                                         |
+|       "description": "The student's   |                                         |
+|       address"                        |                                         |
+|     }                                 |                                         |
+|   },                                  |                                         |
+|   "required": ["id", "name", "email", |                                         |
+|   "age", "isEnrolled"]                |                                         |
+| }`                                    |                                         |
 
-"id": 12345,
 
-"name": "Alex Johnson", 
 
-"email": "alex.johnson@example.edu",
 
-"age": 21,
+```
 
-"isEnrolled": true,
 
-"courses": ["Biology 101", "Mathematics 202", "Literature 303"],
 
-"address": {
-
-"street": "456 University Blvd",
-
-"city": "College Town",
-
-"postalCode": "78901"
-
-}
-
-\} </code>
-
-## Corresponding Schema
-
-<code>{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Student",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer",
-      "description": "The unique identifier for a student"
-    },
-    "name": {
-      "type": "string",
-      "description": "Name of the student"
-    },
-    "email": {
-      "type": "string",
-      "format": "email",
-      "description": "The student's email address"
-    },
-    "age": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "Age of the student"
-    },
-    "isEnrolled": {
-      "type": "boolean",
-      "description": "True if the student is currently enrolled"
-    },
-    "courses": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "List of courses the student is enrolled in"
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": { "type": "string" },
-        "city": { "type": "string" },
-        "postalCode": { "type": "string" }
-      },
-      "required": ["street", "city", "postalCode"],
-      "description": "The student's address"
-    }
-  },
-  "required": ["id", "name", "email", "age", "isEnrolled"]
-}</code>
 
 
 
